@@ -1,0 +1,178 @@
+/* Add this to your CSS */
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #415A77;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Global Styles */
+body {
+    font-family: 'Public Sans', sans-serif;
+    background-color: #E0E1DD;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.left-pane {
+    width: 35%;
+    background-color: #1B263B;
+    color: #E0E1DD;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: slideInLeft 1s ease;
+}
+
+.left-pane h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.left-pane p {
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.right-pane {
+    width: 65%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.section h2 {
+    color: #0D1B2A;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+}
+
+.block {
+    background-color: #778DA9;
+    color: #E0E1DD;
+    padding: 1rem;
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.block:hover .popup {
+    display: block;
+}
+
+.block h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+}
+
+.block p {
+    margin: 0;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1B263B;
+    color: #E0E1DD;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.contact-form {
+    background-color: #415A77;
+    padding: 2rem;
+    border-radius: 8px;
+    color: #E0E1DD;
+    text-align: center;
+}
+
+.contact-form h2 {
+    margin-bottom: 1rem;
+}
+
+.contact-form input, .contact-form textarea, .contact-form button {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #1B263B;
+    color: #E0E1DD;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #778DA9;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-pane {
+        width: 100%;
+        height: auto;
+    }
+
+    .right-pane {
+        width: 100%;
+    }
+}
