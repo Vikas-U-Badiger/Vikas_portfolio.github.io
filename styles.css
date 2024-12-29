@@ -6,6 +6,7 @@ body {
     display: flex;
     min-height: 100vh;
 }
+
 /* Info box styles */
 #hover-info-box {
     position: absolute;
@@ -17,9 +18,8 @@ body {
     font-size: 14px;
     display: none;
     z-index: 1000;
-    pointer-events: none; /* Ensures it doesn't interfere with cursor events */
+    pointer-events: none; /* Prevent interference with mouse events */
 }
-
 
 .container {
     display: flex;
