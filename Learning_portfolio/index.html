@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design and Analysis of Algorithms</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Design and Analysis of Algorithms</h1>
+            <h2>Warehouse Management System Project</h2>
+        </header>
+
+        <nav>
+            <ul class="main-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#project">Project Intro</a></li>
+                <li><a href="#reflections">Reflections</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="home" class="content active">
+                <h2>Welcome to the Course!</h2>
+                <div class="inner-content">
+                    <div class="block">
+                        <h3>Course Info</h3>
+                        <p>This course explores the design and analysis of algorithms, covering fundamental data structures, algorithm efficiency, and real-world applications.</p>
+                    </div>
+                    <div class="block">
+                        <h3>Data Structures and Algorithms We Studied</h3>
+                        <ul>
+                            <li>Arrays, Linked Lists, Stacks, Queues</li>
+                            <li>Trees (Binary Search Trees, AVL Trees)</li>
+                            <li>Graphs (Representations, Traversals)</li>
+                            <li>Sorting Algorithms (Merge Sort, Quick Sort)</li>
+                            <li>Searching Algorithms (Binary Search)</li>
+                        </ul>
+                    </div>
+                    <div class="block">
+                        <h3>Real-Time Applications</h3>
+                        <p>These concepts are applied to real-world problems like optimizing warehouse management, network routing, and search engine indexing.</p>
+                    </div>
+                    <div class="block">
+                        <h3>References</h3>
+                        <ul>
+                            <li>Introduction to Algorithms (CLRS)</li>
+                            <li>Algorithms (Sedgewick & Wayne)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="project" class="content">
+                <h2>Project Introduction</h2>
+                <div class="inner-content">
+                    <div class="block">
+                        <h3>Project Overview</h3>
+                        <p id="typewriter"></p>
+                    </div>
+                    <div class="block">
+                        <h3>Business Case Study Identified</h3>
+                        <p>Optimizing warehouse operations for increased efficiency and reduced costs.</p>
+                    </div>
+                    <div class="block">
+                        <h3>Problem Definition</h3>
+                        <p>Design and implement algorithms for inventory management, order fulfillment, and route optimization within a warehouse environment.</p>
+                    </div>
+                    <div class="block">
+                        <h3>Team Member Details</h3>
+                        <ul>
+                            <li>Member 1: [Vikas]</li>
+                            <li>Member 2: [Karthik]</li>
+                            <li>Member 3: [Abhishek]</li>
+                            <li>Member 4: [Goutam]</li>
+                        </ul>
+                    </div>
+                    <div class="block">
+                        <h3>Assigned Business Cases (Members Working On)</h3>
+                        <ul>
+                            <li>Member 1: Inventory Tracking</li>
+                            <li>Member 2: Order Picking Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="reflections" class="content">
+                <h2>Course Learning Reflections</h2>
+                <div class="inner-content">
+                  <p><b>What are the types of problems we see in nature?</b>
+<br>
+In computational problem solving, we encounter different types of problems that mimic the patterns we observe in nature. At a broad level, these can be categorized as iterative, recursive, and backtracking problems. Iterative problems involve repeating a set of operations until a certain condition is met. For example, calculating factorial iteratively is a very direct application. The second meaningful method is recursion, in which a function resolves a problem by calling itself in smaller steps, the Tower of Hanoi or the Fibonacci sequence. Other methods include backtracking, which proves useful for constraint-based problems, such as the N-Queens Problem, in which solutions are constructed incrementally but abandoned when such paths fail to meet given constraints. In particular, algorithms reflect the natural pattern of solving a problem when it involves conditions of complexity and also constraints.
+<br>
+<b>What is space and time efficiency? Why are they important? Explain the different classes of problems and orders of growth.</b>
+<br>
+Space and time efficiency measure how well an algorithm uses computational resources. Time complexity measures the number of operations required as the input size grows, while space complexity measures memory usage. The importance of these efficiencies is that they directly impact the performance of algorithms in real-world applications. Orders of growth explain the relationship between input size and resource requirements: constant (O(1)), logarithmic (O(log n)), linear (O(n)), quadratic (O(n²)), and exponential (O(2^n)). Some sorting algorithms, for example Quick Sort, are O(n log n), an efficient balance between using resources and producing performance. Understanding these concepts allows one to choose the best algorithms for different problems.
+<br>
+                    <b>Important takeaways from Chapter 2's Design Principles</b>
+<br>
+                    <b>Chapter 2 Hashing and Hash Tables: A number of design principles are mentioned here:</b>
+<br>
+- <b>Hash Functions:</b> Good hash functions avoid collisions and distribute data evenly so that operations like insertion and search take constant time, O(1).
+                    - <b>Collision Avoidance Techniques:</b> Chaining and open addressing are techniques used to handle collisions. Chaining stores collided elements in linked lists, while open addressing searches for an alternative slot.
+                    - <b>Practical Applications:</b> Hash tables show that good theoretical work actually translates to very real-world efficiency. They underlie data retrieval systems such as dictionaries and caches.
+
+These illustrate why good design should balance efficiency and flexibility.
+<br>
+                    <b>The Hierarchical Data and Tree Structures</b>
+<br>
+Trees represent hierarchical data and solve numerous problems in computer science. In BST, all three operations searching, insertion and deletion can be done efficiently - that is, O(log n) - if they remain balanced. AVL Trees enhance BSTs by maintaining balance through rotations, ensuring logarithmic performance. Red-Black Trees extend balancing with color-based rules, widely used in databases and file systems. Heaps prioritize quick access to the largest or smallest elements, as seen in priority queues. Tries excel in prefix-based searches, crucial in autocomplete and spellcheck features. Each tree structure optimizes specific problem scenarios, demonstrating the adaptability of hierarchical data representations.
+<br>
+<b>Need for Algorithm for Array Querying</b>
+<br>
+Array query algorithms address issues like accessing, modification, and data analysis. For example, with prefix sums or segment trees, range queries are computed in very little time. In searching operations, arrays make use of the binary search optimization, where their complexity is of logarithmic time, O(log n), hence making arrays core in handling structured data. The applications include such diverse fields as database indexing, computational biology, thus underlining versatility and necessity in robust query mechanisms.
+<br>
+<b>Trees vs. Graphs</b>
+<br>
+Trees and graphs are both relation representations but fundamentally different. Trees are hierarchical structures with a single root and acyclic connections. Graphs generalize this concept, allowing cycles and multiple root-like nodes. Tree traversal methods, such as Inorder, Preorder, and Postorder, are linear and well-defined. Graph traversal, encompassing Depth-First Search (DFS) and Breadth-First Search (BFS), adapts to cyclic and acyclic scenarios. Trees are great for hierarchical representations like file systems, and graphs solve complex network problems like social connections or transportation systems. The diversity of their application underlines the adaptability of data structures to various applications.
+<br>
+  <b>Sorting and Searching Algorithms and Real-World Connections</b>
+<br>
+Sorting and searching are foundational algorithmic techniques. Sorting methods, such as Quick Sort (divide and conquer) and Merge Sort (stable and efficient), order data efficiently for further processing. Searching algorithms, including binary search, find elements in sorted datasets with logarithmic complexity. Real-world applications abound: search engines rely on efficient algorithms to retrieve information, while sorting underpins database query optimizations. These techniques bridge theoretical design with practical utility.
+<br>
+<b>Graph Algorithms: Spanning Trees and Shortest Paths</b>
+<br>
+Graph algorithms solve key problems such as finding spanning trees and shortest paths. Minimum Spanning Tree algorithms, like Kruskal's and Prim's, optimize network connections such as power grids or communication networks. Shortest path algorithms, like Dijkstra's or A*, give the best route in navigation systems. These applications show how graph algorithms can translate hard problems into implementable solutions and how important it is in today's computation.
+<br>
+<b>Explored Algorithm Design Techniques</b>
+<br>
+The course discusses the following methodologies for algorithm design:
+<br>
+- <b>Divide and Conquer:</b> Breaking down problems into smaller subproblems, as seen in Merge Sort.
+- <b>Dynamic Programming:</b> Solving overlapping subproblems, as illustrated by the Knuth-Morris-Pratt algorithm used for substring searching.
+- <b>Greedy Algorithms:</b> Choosing locally optimal solutions, as illustrated by Huffman encoding.
+- <b>Backtracking:</b> Exploring all possible solutions, eliminating paths that violate constraints, as seen in the N-Queens Problem.
+
+These techniques provide versatile tools for addressing diverse challenges, emphasizing adaptability and efficiency in problem-solving.
+<br>
+**Reflection on Problem-Solving Approaches**
+<br>
+1. <b>Efficiency and Trade-offs:</b> Selecting an efficient approach requires balancing constraints, considering factors like time, space, and implementation complexity. For example, I’d prefer Quick Sort for general use but use Merge Sort for stability.
+<br>
+2. <b>Balancing Constraints:</b> In constrained designs, such as hashing, trade-offs between collision resolution techniques guide design decisions.
+<br>
+3. <b>Simplicity vs. Optimization:</b> In cases where resources are scarce, simplicity usually wins over optimization. For example, using an iterative solution for factorial when recursion may cause stack overflow.
+<br>
+4. <b>Divide and Conquer:</b> Breaking down a problem into smaller parts makes the design easier. Dynamic programming is a good example of this with its overlapping subproblems.
+<br>
+5. <b>Overcoming Weaknesses:</b> Identifying bottlenecks, such as hash collisions or unbalanced trees, leads to adaptive solutions like AVL or Red-Black Trees.
+<br>
+6. <b>Cross-context Knowledge:</b> Known solutions to new domains can be applied to demonstrate the strength of adaptive techniques, such as graph algorithms in bioinformatics or social network analysis.
+<br>
+7. <b>Patterns in Complexity:</b> Patterns in datasets simplify the application of algorithms and aid decisions like hashing vs. search trees.
+<br>
+8. **Innovation vs. Tradition:</b> Situations that require fast deployment might rely on proven solutions, while unique challenges can lead to innovation.
+<br>
+9. <b>Efficacy of Solutions:</b> Evaluation of solutions also takes into account parameters such as speed of execution, memory usage, and adaptability. For example, the efficiency of a solution is increased if it is capable of adapting in response to unanticipated increases in data volume.
+<br>
+10. <b>Adaptability of Solutions:</b> Tackling unforeseen problems often requires modification or improvement of existing algorithms. For example, changing a graph traversal algorithm to include weighted edges ensures robustness in changing scenarios.
+<br>
+11. <b>Pattern Recognition:</b> Techniques such as looking at data structures for their inherent properties or recognizing patterns of recurring subproblems help in choosing efficient algorithms.
+<br>
+12. <b>Design Innovation:</b> Whether one should innovate would depend on the cost of development versus potential benefits. Solutions that have been tried and tested are often good enough for traditional problems, but innovative designs are necessary in novel or very high-impact problems.
+<br>
+These principles capture the nature of iterative and incremental problem-solving, thus encouraging effective and innovative solutions.
+
+</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
