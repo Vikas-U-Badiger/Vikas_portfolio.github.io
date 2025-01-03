@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAA Concepts and My Answers</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .concept {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .question {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .answer {
+            margin-bottom: 10px;
+        }
+        .code {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto; /* Enable horizontal scrolling for long code */
+            font-family: monospace;
+        }
+        pre{
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>DAA Lab Portfolio</h1>
+    <div class="concept">
+      <h2> Concepts learned</h2>
+<div class="question">What are the key concepts/things I learned in this course?(Exercises, Structured Enquiry, Case study)</div>
+      <div class="answer"><p><b>Time Complexity Analysis: </b>I understood how to determine the efficiency of an algorithm in relation to the time it takes to run with increasing size of its input. The process taught me how big O notation works and means of determining time complexity related to various algorithms- such as those involving loops, recursion, and nested structures.<br><br>
+        <b>Binary Search Trees (BSTs):</b> I learned the structure and properties of a binary search tree. The operations that I learned involved insertion, deletion, search, as well as different types of traversals (inorder, preorder, postorder). In addition, the balancing of BSTs; for example, AVL trees and Red-Black trees and their importance in maintaining optimal search times.<br><br><b>Depth-First Search (DFS) and Breadth-First Search (BFS):</b>
+The two most important graph traversal algorithms are DFS and BFS, which visit every vertex and edge of a graph in two possibly different orders. I also saw their applications over a number of problems such as finding connected components, topological sorting, finding shortest paths to name a few.<br><br>
+        <b>Heap:</b> I learned about the heap data structure, which is a specialized tree-based configuration following the heap property. I also came to know about different classifications of heaps: min-heap and max-heap, with their respective applications in priority queues and heap sorting methodologies.<br><br>
+        <b>Sorting:</b> I learned about several algorithms for sorting. These include comparison-based sorts like bubble sort, insertion sort, merge sort, and quicksort, as well as non-comparison-based sorts like counting sort and radix sort. I learned about their time and space complexities and when to use each.<br><br><b>
+        Pattern Detection:</b> I learned about algorithms pertaining to detection of the presence of any given pattern in a larger text. It included basic string searching algorithms and more complex algorithms like Knuth-Morris-Pratt (KMP) and Boyer-Moore.<br><br><b>
+        Graph Algorithms:</b> I was exposed to numerous algorithms that one can use for solving problems involving graphs, which include shortest path algorithms like Dijkstra's and Bellman-Ford algorithms; minimum spanning tree algorithms like Kruskal's and Prim's algorithms; and network flow algorithms.
+</p></div>
+  </div>
+    <div class="concept">
+        <h2>Time Complexity Analysis</h2>
+        <div class="question">Learning/Understanding Challenges:</div>
+        <div class="answer">At first, the formal definitions for Big O, Big Omega, and Big Theta notations were a bit unclear to me. The challenges arose while analyzing nested loops and recursive functions precisely, especially for problems with multiple variables or intricate control flow. Similarly, it was rather difficult for me to understand the differences among various complexity classes and the rates of their growth.</div>
+<div><img src="https://paper-attachments.dropbox.com/s_2D428973624E7FC84C7D69D11421DE762BEA6B6F3361231FCDCAE0425D14526F_1664885448372_Untitled.drawio+17.png"></div>
+        <div class="question">Challenges in Correlating with Real-World Applications: </div>
+        <div class="answer">Although I understood the theoretical implications of time complexity, it was hard to see its direct impact on real-world applications. It was not always clear how a difference in Big O notation would translate to actual performance differences in a running program, considering hardware and implementation details.</div>
+        <div class="question">Determine the Best Possible Approach/Design Techniques: </div>
+        <div class="answer"> I learned how to identify the dominant operations of an algorithm and apply the Big O rules to get the overall complexity. It taught me that there is always a time and space trade-off; one should select algorithms with the best fit for constraints and expected input sizes in the given problem. In such cases where memory was a big issue, I would go with the in-place algorithm, even if it had a slightly higher time complexity.</div>
+        <div class="question">My Code Example:</div>
+        <div class="code">
+            <pre>
+                function exampleFunction(n) {
+                    for (let i = 0; i < n; i++) {
+                        for (let j = 0; j < n; j++) {
+                            // Some constant time operation
+                            console.log(i * j);
+                        }
+                    }
+                } 
+            </pre>
+          <div class="answer"><p>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+            <p>\(\sum_{i=0}^{n}\) \(\sum_{j=0}^{n} 1\) <b>&isin; O(n^2)</b> time complexity</p></p></div>
+        </div>
+  <div>
+    </div>
+<div class="concept">
+  <h2>Arrays/Hash Maps</h2>
+  <div class="question">Challenges in Understanding:</div>
+  <div class="answer">With arrays, it was sometimes difficult to keep in mind that they are of fixed size and what that means for insertions and deletions. In the case of Hash Maps, it was a bit challenging to fully understand how hash functions actually work and how collisions are handled—e.g., chaining or open addressing.</div>
+  <div class="question">Real-World Application Challenges:</div>
+  <div class="answer">In real-world applications, the choice between arrays and hash maps depends heavily on the use case. Should fast lookups by key be required, then a hash map is the excellent choice. If there is a need to preserve order or iterate through elements in a particular sequence, then an array or a sorted array may be more fitting. Dealing with very large datasets which do not fit in memory can be quite problematic for both.</div>
+  <div class="question">Most Efficient Approach:</div>
+  <div class="answer">For lookups by key, hash maps (with a good hash function and collision handling) provide O(1) average time complexity, which is very efficient. For ordered data or when index-based access is important, arrays are the better choice.</div>
+</div>
+
+<div class="concept">
+  <h2>Pattern Printing</h2>
+  <div class="question">Challenges in Understanding:</div>
+  <div class="answer">It was hard in the beginning to translate a desired pattern into nested loops and conditional statements. It took practice to figure out the right loop boundaries and the logic for printing spaces and characters.</div>
+  <div class="question">Real-World Application Challenges:</div>
+  <div class="answer">While pattern printing itself may not be directly applicable in most real-world applications, the underlying logic of nested loops and conditional statements is central to many programming tasks, such as data processing, image manipulation, and game development.</div>
+  <div class="question">Most Efficient Approach:</div>
+  <div class="answer">The most efficient approach would be to carefully analyze the pattern and break it down into smaller, repeatable parts. Then, iterate through rows and columns with nested loops, and use conditional statements to determine what to print at each position.</div>
+</div>
+
+<div class="concept">
+  <h2>Pointers</h2>
+  <div class="question">Challenges in Understanding:</div>
+  <div class="answer">It was hard to understand how memory addresses work and how pointers store and manipulate them in the beginning. The same goes for the issues related to pointer arithmetic, null pointers, and dangling pointers.</div>
+  <div class="question">Real-World Application Challenges:</div>
+  <div class="answer">Pointers are a key in languages such as C or C++, in dealing with dynamic memory management, implementing data structures like linked lists, and optimization of performance. However, they can also sometimes be a source of bugs if not used carefully. In higher-level languages such as Java and Python, the concept of pointers has been abstracted away, though understanding how that works underneath may prove advantageous.</div>
+  <div class="question">Most Efficient Approach:</div>
+  <div class="answer">Using pointers correctly and cautiously is key. Always initialize pointers, avoid dereferencing null or dangling pointers, and use them judiciously to optimize performance or implement specific data structures.</div>
+<div class="question">My Code:</div>
+  <div class="code">
+            <pre>#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+int x=10;
+int &ref=x;
+cout&lt;&lt;ref&lt;&lt;endl;;
+int *p=&x;
+cout&lt;&lt;p&lt;&lt;&quot; &quot;&lt;&lt;*p;
+}
+</pre>
+</div>
+
+<div class="concept">
+  <h2>Stack</h2>
+  <div class="question">Challenges in Understanding:</div>
+  <div class="answer">It did take some time to understand the LIFO (Last-In, First-Out) principle of stacks and how it applies to function calls (call stack) and undo/redo mechanisms.</div>
+  <div class="question">Real-World Application Challenges:</div>
+  <div class="answer">Stacks are heavily used in real-world applications; for example, in function call management, expression evaluation, and undo/redo functionality in software applications.</div>
+  <div class="question">Most Efficient Approach:</div>
+  <div class="answer">An array-based versus linked list-based implementation of the stack, depending on the requirements and constraints of the application.</div>
+<div class="question">My Code:</div>
+  <div class="code">
+            <pre>class Stack{
+    int a[max];
+    int top=-1;
+public:
+    Stack();
+    bool isempty();
+    bool isfull();
+    void push(int);
+    void pop();
+    void print();
+    void peek();
+};
+Stack::Stack()
+{
+    for(int i=0;i&amp;lt;max;i++)
+    {
+        a[i]=0;
+    }
+}
+bool Stack::isempty()
+{
+    return (top==-1);
+}
+bool Stack::isfull()
+{
+    return (top==max-1);
+}
+void Stack::push(int data)
+{
+    if(isfull())
+    {
+        cout&amp;lt;&amp;lt;&quot;no place to store&quot;;
+        return;
+    }
+    top+=1;
+    a[top]=data;
+}
+void Stack::pop()
+{
+    if(isempty())
+    {
+        cout&amp;lt;&amp;lt;&quot;no elements to remove&quot;;
+        return;
+    }
+    int data=a[top];
+    cout&amp;lt;&amp;lt;&quot;popped element is :&quot;&amp;lt;&amp;lt;data&amp;lt;&amp;lt;endl;
+    top-=1;
+}
+void Stack::print()
+{
+    for(int i=0;i&amp;lt;max;i++)
+    {
+        cout&amp;lt;&amp;lt;a[i]&amp;lt;&amp;lt;endl;
+    }
+}
+void Stack::peek()
+{
+    cout&amp;lt;&amp;lt;&quot;the last element:&quot;&amp;lt;&amp;lt;a[top]&amp;lt;&amp;lt;endl;
+}
+</pre>
+</div>
+ 
+
+<div class="concept">
+  <h2>Queue</h2>
+  <div class="question">Challenges in Understanding:</div>
+  <div class="answer">It did take some time to understand the FIFO (First-In, First-Out) nature of queues and how it differs from stacks.</div>
+  <div class="question">Real-World Application Challenges:</div>
+  <div class="answer">Queues arise in many real-world applications: for example, handling requests in a web server, print jobs in a printer queue, and breadth-first search.</div>
+  <div class="question">Most Efficient Approach:</div>
+  <div class="answer">Using an appropriate queue implementation (circular array or linked list-based) depending on the specific requirements.</div>
+<div class="question">My Code:</div>
+<div class="code">
+            <pre>
+class Queue
+{
+private:
+    int Front;
+    int rear;
+    int arr[MAXSIZE];
+public:
+    Queue();
+    void Enqueue();
+    void Dequeue();
+    void Display();
+};
+
+Queue::Queue()
+{
+    Front=0;
+    rear=-1;
+    for(int i=0;i&lt;MAXSIZE;i++)
+    {
+        arr[i]=0;
+    }
+}
+
+void Queue::Enqueue()
+{
+    if(rear==MAXSIZE-1)
+        cout &lt;&lt; &amp;quot;Queue is Full&amp;quot;;
+    else
+    {
+        int value;
+        cout &lt;&lt; &amp;quot;Enter the element to Enqueued: &amp;quot;;
+        cin &gt;&gt; value;
+        rear++;
+        arr[rear]=value;
+        cout &lt;&lt; &amp;quot;The Enqueued Element is: &amp;quot; &lt;&lt; arr[rear];
+    }
+}
+
+void Queue::Dequeue()
+{
+    if(rear==-1)
+        cout &lt;&lt; &amp;quot;Queue is Empty&amp;quot;;
+    else
+    {
+        int y;
+        y=arr[Front];
+        Front++;
+        cout &lt;&lt; &amp;quot;The Dequeued Element is: &amp;quot; &lt;&lt; y;
+    }
+}
+
+void Queue::Display()
+{
+    if(Front&gt;rear)
+        cout &lt;&lt; &amp;quot;Queue is Empty\n&amp;quot;;
+    else
+    {
+        int i=0;
+        cout &lt;&lt; &amp;quot;The Queue is: \n&amp;quot;;
+        for(i=Front;i&lt;=rear;i++)
+            cout &lt;&lt; arr[i] &lt;&lt; endl;
+    }
+
+}
+            </pre>
+</div>
+
+<div class="concept">
+  <h2>Space and Time Efficiency</h2>
+  <div class="question">Challenges in Understanding:</div>
+  <div class="answer">In the beginning, it was challenging to understand the abstract nature of Big O notation and how it related to the actual performance of algorithms. It also took some time to understand the different complexity classes and how they grow with the input size.</div>
+  <div class="question">Real-World Application Challenges:</div>
+  <div class="answer">It is challenging to measure the time and space complexity of a program in real-world applications because of the hardware, the operating system, and all the other processes running. But at least knowing Big O notations helps in making decisions regarding algorithm selection.</div>
+  <div class="question">Most Efficient Approach:</div>
+  <div class="answer">The most efficient approach involves analyzing the algorithm's time and space complexity using Big O notation and choosing the algorithm that best suits the problem's constraints and expected input sizes.</div>
+
+<div><img src="assets/Merge_Sort_Time_Complexity.png"><div>
+<div class="question">My Code:</div>
+  <div class="code">
+            <pre>#include &lt;bits/stdc++.h>
+using namespace std;
+using namespace std::chrono;
+
+// Merges two subarrays of arr[].
+void merge(vector&lt;int>&amp; arr, int left, int mid, int right)
+{
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    // Create temp vectors
+    vector&lt;int> L(n1), R(n2);
+
+    // Copy data to temp vectors L[] and R[]
+    for (int i = 0; i &lt; n1; i++)
+        L[i] = arr[left + i];
+    for (int j = 0; j &lt; n2; j++)
+        R[j] = arr[mid + 1 + j];
+
+    int i = 0, j = 0, k = left;
+
+    // Merge the temp vectors back into arr[left..right]
+    while (i &lt; n1 &amp;&amp; j &lt; n2) {
+        if (L[i] &lt;= R[j]) {
+            arr[k] = L[i];
+            i++;
+        }
+        else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    // Copy remaining elements of L[], if any
+    while (i &lt; n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    // Copy remaining elements of R[], if any
+    while (j &lt; n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+// Merge Sort function
+void mergeSort(vector&lt;int>&amp; arr, int left, int right)
+{
+    if (left >= right)
+        return;
+
+    int mid = left + (right - left) / 2;
+    mergeSort(arr, left, mid);
+    mergeSort(arr, mid + 1, right);
+    merge(arr, left, mid, right);
+}
+
+// Function to generate a random vector of a given size
+vector&lt;int> generateRandomVector(int size) {
+    vector&lt;int> arr(size);
+    for (int i = 0; i &lt; size; i++) {
+        arr[i] = rand() % 100000; // Random values in the range [0, 100000)
+    }
+    return arr;
+}
+
+// Function to print a vector (for debugging)
+void printVector(vector&lt;int>&amp; arr)
+{
+    for (int i = 0; i &lt; arr.size(); i++)
+        cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    cout &lt;&lt; endl;
+}
+
+// Main function for benchmarking
+int main()
+{
+    vector&lt;int> sizes = {100, 500, 1000, 5000, 10000, 50000};
+
+    cout &lt;&lt; &quot;Input Size | Time Taken (ms)\n&quot;;
+    cout &lt;&lt; &quot;-----------------------------\n&quot;;
+
+    for (int size : sizes) {
+        vector&lt;int> arr = generateRandomVector(size);
+
+        auto start = high_resolution_clock::now();
+        mergeSort(arr, 0, arr.size() - 1);
+        auto end = high_resolution_clock::now();
+
+        auto duration = duration_cast&lt;milliseconds>(end - start);
+        cout &lt;&lt; setw(10) &lt;&lt; size &lt;&lt; &quot; | &quot; &lt;&lt; setw(15) &lt;&lt; duration.count() &lt;&lt; &quot; ms\n&quot;;
+    }
+
+    return 0;
+}
+</pre>
+</div>
+<div class="concept">
+  <h2>Binary Search Tree</h2>
+  <div class="question">Challenges in Understanding:</div>
+  <div class="answer">The recursion involved in BST operations and the concept of balanced BSTs were difficult to understand initially.</div>
+  <div class="question">Real-World Application Challenges:</div>
+  <div class="answer">Maintaining balance in BSTs in real-world applications with frequent insertions and deletions can be complex.</div>
+  <div class="question">Most Efficient Approach:</div>
+  <div class="answer">Using self-balancing BSTs (AVL, Red-Black) to ensure O(log n) time complexity for search, insertion, and deletion.</div>
+<div class="question">My Code:</div>
+  <div class="code">
+            <pre>typedef struct tree
+{
+    int data;
+    struct tree *right,*left;
+}T;
+T* insertion(T *root,int data)
+{
+    T *newnode=(T*)malloc(sizeof(T)),*c=root,*p=NULL;
+    if(newnode==NULL)
+    {
+        cout&lt;&lt;&amp;quot;the memory is occupied&amp;quot;;
+        return root;
+    }
+    newnode-&gt;data=data;
+    newnode-&gt;left=NULL;
+    newnode-&gt;right=NULL;
+    if(root==NULL)
+    {
+        return newnode;
+    }
+    while(c!=NULL)
+    {
+        p=c;
+        if(newnode-&gt;data&lt;c-&gt;data)
+            c=c-&gt;left;
+        else
+            c=c-&gt;right;
+    }
+    if(newnode-&gt;data&lt;p-&gt;data)
+        p-&gt;left=newnode;
+    else
+        p-&gt;right=newnode;
+    return root;
+}
+void inorder(T *root)
+{
+    if(root!=NULL)
+    {
+        inorder(root-&gt;left);
+        cout&lt;&lt;root-&gt;data&lt;&lt;endl;
+        inorder(root-&gt;right);
+    }
+}
+T* del(T *root,int data)
+{
+    if(root==NULL)
+    {
+        cout&lt;&lt;&amp;quot;tree is empty&amp;quot;;
+        return root;
+    }
+    T *p=NULL,*c=root;
+    while(c!=NULL&amp;&amp;data!=c-&gt;data)
+    {
+        p=c;
+        if(data&lt;c-&gt;data){
+            c=c-&gt;left;
+        }
+        else
+            c=c-&gt;right;
+    }
+    if(c==NULL)
+    {
+        cout&lt;&lt;&amp;quot;item was not found&amp;quot;;
+        return root;
+    }
+   if (c-&gt;left == NULL &amp;&amp; c-&gt;right == NULL)
+    {
+        if (p == NULL)  // Deleting the root node
+            root = NULL;
+        else if (p-&gt;left == c)
+            p-&gt;left = NULL;
+        else
+            p-&gt;right = NULL;
+    }
+
+    // Case 2: Node to delete has one child
+    else if (c-&gt;left == NULL)  // Only right child exists
+    {
+        if (p == NULL)  // Deleting the root node
+            root = c-&gt;right;
+        else if (p-&gt;left == c)
+            p-&gt;left = c-&gt;right;
+        else
+            p-&gt;right = c-&gt;right;
+    }
+    else if (c-&gt;right == NULL)  // Only left child exists
+    {
+        if (p == NULL)  // Deleting the root node
+            root = c-&gt;left;
+        else if (p-&gt;left == c)
+            p-&gt;left = c-&gt;left;
+        else
+            p-&gt;right = c-&gt;left;
+    }
+
+    // Case 3: Node to delete has two children
+    else
+    {
+        T *s = c-&gt;right;
+        T *ps = c;  // Parent of successor
+
+        // Find the in-order successor (leftmost node in right subtree)
+        while (s-&gt;left != NULL)
+        {
+            ps = s;
+            s = s-&gt;left;
+        }
+
+        // Replace c&amp;apos;s data with successor&amp;apos;s data
+        c-&gt;data = s-&gt;data;
+
+        // Delete the successor node
+        if (ps-&gt;left == s)
+            ps-&gt;left = s-&gt;right;
+        else
+            ps-&gt;right = s-&gt;right;
+
+        c = s;  // Now delete the successor node
+
+    }
+    free(c);
+
+    return root;
+}
+</pre>
+</div>
+
+<div class="concept">
+  <h2>DFS & BFS</h2>
+  <div class="question">Challenges in Understanding:</div>
+  <div class="answer">Differentiating between the traversal strategies of DFS and BFS and understanding when to use each was initially confusing.</div>
+  <div class="question">Real-World Challenges:</div>
+  <div class="answer">It can be quite problematic to choose the right algorithm for a particular graph problem and to work with really large graphs on limited memory.</div>
+  <div class="question">Most Efficient Approach:</div>
+  <div class="answer">Chosen DFS—to explore all accessible nodes—when the solution is located deep in the graph. On the other hand, BFS was chosen for finding the shortest paths or when the solution is near the starting node.</div>
+<div class="question">My Code:</div>
+  <div class="code"><pre>int v = 5;
+int m[10][10] = {{0,1,1,0,0}, {1,0,0,1,1},
+        {1,0,0,0,1}, {0,1,0,0,0}, {0,1,1,0,0}};
+int visited[10];
+
+void dfs(int m[10][10], int v, int source) {
+    visited[source] = 1;
+    for (int i = 0; i &lt; v; i++) {
+        if (m[source][i] == 1 &amp;&amp; visited[i] == 0) {
+            cout &lt;&lt; i &lt;&lt; &quot;\t&quot;;
+            dfs(m, v, i);
+        }
+    }
+}
+
+
+void bfs(int m[10][10], int v, int source) {
+    int queue[20];
+    int front = 0, rear = 0, u, i;
+    int visited[10];
+
+    for (i = 0; i &lt; v; i++)
+        visited[i] = 0;
+
+    queue[rear] = source;
+    visited[source] = 1;
+
+    cout &lt;&lt; &quot;The BFS Traversal is... \n&quot;;
+
+    while (front &lt;= rear) {
+        u = queue[front];
+        cout &lt;&lt; u &lt;&lt; &quot;\t&quot;;
+        front++;
+
+        for (i = 0; i &lt; v; i++) {
+            if (m[u][i] == 1 &amp;&amp; visited[i] == 0) {
+                visited[i] = 1;
+                rear++;
+                queue[rear] = i;
+            }
+        }
+    }
+}</pre>
+</div>
+
+<div class="concept">
+  <h2>Heap</h2>
+  <div class="question">Challenges in Understanding:</div>
+  <div class="answer">It took a little while to understand the heap property and the heapify operation.</div>
+  <div class="question">Real-World Application Challenges:</div>
+  <div class="answer">The efficient implementation of heap operations is quite challenging in dynamic scenarios when the heap size does not remain constant.</div>
+  <div class="question">Most Efficient Approach:</div>
+  <div class="answer">Using heaps for priority queue implementations and heapsort for efficient in-place sorting.</div>
+</div>
+
+<div class="concept">
+  <h2>Sorting Algorithms</h2>
+  <div class="question">Challenges in Understanding:</div>
+  <div class="answer">The biggest challenge was understanding the different sorting algorithms and their time and space complexities.</div>
+  <div class="question">Real-World Application Challenges:</div>
+  <div class="answer">It can be challenging to choose the right sorting algorithm for a dataset and use case.</div>
+  <div class="question">Most Efficient Approach:</div>
+  <div class="answer">Choosing the appropriate sorting algorithm based on data size, pre-existing order, and memory constraints.</div>
+</div>
+
+<div class="concept">
+  <h2>Pattern Searching</h2>
+  <div class="question">Challenges in Understanding:</div>
+  <div class="answer">Understanding optimized pattern searching algorithms like KMP and Boyer-Moore was quite difficult.</div>
+  <div class="question">Real-World Application Challenges:</div>
+  <div class="answer">Handling variations in real-world text data (case sensitivity, punctuation) and searching large datasets efficiently can be challenging.</div>
+  <div class="question">Most Efficient Approach:</div>
+  <div class="answer">Using optimized algorithms like KMP or Boyer-Moore for larger texts and frequent searches.</div>
+</div>
+
+<div class="concept">
+  <h2>Graph Algorithms</h2>
+  <div class="question">Challenges in Understanding:</div>
+  <div class="answer">It was hard to understand the different graph representations and the various graph algorithms for different problems.</div>
+  <div class="question">Real-World Application Challenges:</div>
+  <div class="answer">It is not easy to choose the right algorithm for a specific graph problem and to handle large, complex graphs.</div>
+  <div class="question">Most Efficient Approach:</div>
+  <div class="answer">The choice of the right algorithm, given the problem and properties of the graph (directed/undirected, weighted/unweighted).</div>
+<div class="question">My Code:</div>
+  <div class="code">
+            <pre>int minDistance(vector&lt;int&gt;&amp; dist, vector&lt;bool&gt;&amp; visited, int V) {
+    int min = INT_MAX, minIndex;
+
+    for (int v = 0; v &lt; V; v++) {
+        if (!visited[v] &amp;&amp; dist[v] &lt; min) {
+            min = dist[v];
+            minIndex = v;
+        }
+    }
+
+    return minIndex;
+}
+
+// Dijkstra&apos;s algorithm to find shortest paths from source
+void dijkstra(vector&lt;vector&lt;int&gt;&gt;&amp; graph, int source, vector&lt;int&gt;&amp; parent) {
+    int V = graph.size();
+    vector&lt;int&gt; dist(V, INT_MAX); // Distance vector
+    vector&lt;bool&gt; visited(V, false); // Visited nodes vector
+    dist[source] = 0; // Distance from source to itself is 0
+
+    for (int count = 0; count &lt; V - 1; count++) {
+        int u = minDistance(dist, visited, V);
+        visited[u] = true;
+
+        for (int v = 0; v &lt; V; v++) {
+            // Update the distance if there is a shorter path to v through u
+            if (!visited[v] &amp;&amp; graph[u][v] &amp;&amp; dist[u] != INT_MAX &amp;&amp; dist[u] + graph[u][v] &lt; dist[v]) {
+                dist[v] = dist[u] + graph[u][v];
+                parent[v] = u;
+            }
+        }
+    }
+
+    // Print the shortest path distances
+    cout &lt;&lt; &quot;Vertex Distance from Source\n&quot;;
+    for (int i = 0; i &lt; V; i++) {
+        cout &lt;&lt; i &lt;&lt; &quot;\t\t&quot; &lt;&lt; dist[i] &lt;&lt; endl;
+    }
+}
+
+void findMSTEdges(vector&lt;vector&lt;int&gt;&gt;&amp; graph, vector&lt;int&gt;&amp; parent) {
+    int V = graph.size();
+    int totalWeight = 0;
+    cout &lt;&lt; &quot;Edges in MST:\n&quot;;
+
+    for (int i = 1; i &lt; V; i++) {
+        cout &lt;&lt; char(&apos;a&apos; + parent[i]) &lt;&lt; &quot; - &quot; &lt;&lt; char(&apos;a&apos; + i) &lt;&lt; &quot; : &quot; &lt;&lt; graph[i][parent[i]] &lt;&lt; endl;
+        totalWeight += graph[i][parent[i]];
+    }
+
+    cout &lt;&lt; &quot;Total weight of MST: &quot; &lt;&lt; totalWeight &lt;&lt; endl;
+}
+</pre>
+</div>
+    </body>
+</html>
