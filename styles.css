@@ -168,3 +168,39 @@ body {
 .social-btn.instagram:hover {
     box-shadow: 0 8px 15px rgba(188, 24, 136, 0.5);
 }
+.block {
+    position: relative;
+    background-color: #778DA9;
+    color: #E0E1DD;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1B263B;
+    color: #E0E1DD;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    white-space: nowrap;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.block:hover .popup {
+    display: block;
+}
